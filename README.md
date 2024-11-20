@@ -272,3 +272,4 @@ Several key insights were gained from the exploratory data analysis portion of t
 The type of device user was also found to be a possible indicator of fraudulent transactions. Devices with multiple users accounted for a higher percentage of fraudulent transactions compared to non-fraudulent transactions. This suggests that multiple users could be an indicator of fraudulent activity. Lastly, a heatmap was utilized to determine the correlations between numerical features. The correlation of features was found to be relatively weak, suggesting that these variables will not cause redundancy or overfitting of the model.
 
 Based on the EDA, the features `time_difference` and `user_id` are likely the best to include in a model that predicts fraudulent transactions. Both features appear to be indicators of fraudulent transactions, and therefore these features will be useful in creating a model that predicts fraudulent transactions.
+

@@ -173,7 +173,7 @@ class, purchase value, time difference, and class in an attempt to deter-
 mine how correlated these variables were and if there were any strong correlations
 to avoid when creating a model.
 ### Descriptive Statistics
-![E-Commerce Fraud Dataset Descriptive Statistics](DescriptiveStats.png)
+![E-Commerce Fraud Dataset Descriptive Statistics](Images/DescriptiveStats.png)
 
 Figure 1: E-Commerce Fraud Dataset Descriptive Statistics
 
@@ -183,7 +183,7 @@ Since the goal of the project is to create a model to predict fraudulent transac
 
 ### Class Distribution: Non-Fraud vs. Fraud
 
-![Class Distribution Non-Fraud vs. Fraud](image.png)
+![Class Distribution Non-Fraud vs. Fraud](Images/image.png)
 
 _Figure 1: Class Distribution Non-Fraud vs. Fraud_
 
@@ -195,7 +195,7 @@ After understanding the distribution of `class`, it is important to compare `cla
 
 ### Purchase Value by Class
 
-![Purchase Value By Class](image2.png)
+![Purchase Value By Class](Images/image2.png)
 
 _Figure 2: Purchase Value By Class_
 
@@ -205,7 +205,7 @@ The "Class vs. Purchase Value" figure shows that there is no significant differe
 
 ### Fraudulent Transaction Percentage by Source
 
-![Fraudulent Transaction Percentage by Source](image3.png)
+![Fraudulent Transaction Percentage by Source](Images/image3.png)
 
 _Figure 3: Fraudulent Transaction Percentage by Source_
 
@@ -215,7 +215,7 @@ The "Source vs. Fraud Percentage" bar graph displays the percentage of transacti
 
 ### Fraudulent Transaction Percentage by Browser
 
-![Fraudulent Transaction Percentage by Browser](image4.png)
+![Fraudulent Transaction Percentage by Browser](Images/image4.png)
 
 _Figure 4: Fraudulent Transaction Percentage by Browser_
 
@@ -225,7 +225,7 @@ The "Browser vs. Fraud Percentage" bar graph shows the percentage of transaction
 
 ### Fraudulent Transaction Percentage by Sex
 
-![Fraudulent Transaction Percentage by Sex](image5.png)
+![Fraudulent Transaction Percentage by Sex](Images/image5.png)
 
 _Figure 5: Fraudulent Transaction Percentage by Sex_
 
@@ -235,7 +235,7 @@ The "Sex vs. Fraud" bar graph is used to determine if one sex was more likely to
 
 ### Time Difference Between Signup and Initial Purchase for Non-Fraudulent and Fraudulent Transactions
 
-![Violin Plot of Time Difference Distributions for Non-Fraudulent and Fraudulent Transactions](image6.png)
+![Violin Plot of Time Difference Distributions for Non-Fraudulent and Fraudulent Transactions](Images/image6.png)
 
 _Figure 6: Violin Plot of Time Difference Distributions for Non-Fraudulent and Fraudulent Transactions_
 
@@ -245,7 +245,7 @@ The violin plot of the time difference distributions for non-fraudulent and frau
 
 ### Fraudulent and Non-Fraudulent Transactions Based on Device User Type
 
-![Grouped Bar Chart of Devices as Single or Multiple Users for Fraudulent and Non-Fraudulent Transactions](image7.png)
+![Grouped Bar Chart of Devices as Single or Multiple Users for Fraudulent and Non-Fraudulent Transactions](Images/image7.png)
 
 _Figure 7: Grouped Bar Chart of Devices as Single or Multiple Users for Fraudulent and Non-Fraudulent Transactions_
 
@@ -255,7 +255,7 @@ The grouped bar chart displaying devices as single or multiple users for fraudul
 
 ### Numerical Data Correlation Heatmap
 
-![Correlation Heatmap](image8.png)
+![Correlation Heatmap](Images/image8.png)
 
 _Figure 8: Correlation Heatmap_
 

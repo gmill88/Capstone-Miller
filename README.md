@@ -175,5 +175,5 @@ to avoid when creating a model.
 ### Descriptive Statistics
 ![E-Commerce Fraud Dataset Descriptive Statistics](DescriptiveStats.png)
 
-*Figure 1: E-Commerce Fraud Dataset Descriptive Statistics*
+Figure 1: E-Commerce Fraud Dataset Descriptive Statistics
 

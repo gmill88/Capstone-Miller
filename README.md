@@ -177,3 +177,98 @@ to avoid when creating a model.
 
 Figure 1: E-Commerce Fraud Dataset Descriptive Statistics
 
+## Data Visualizations
+
+Since the goal of the project is to create a model to predict fraudulent transactions, the EDA is focused on `class` which indicates whether or not a transaction was fraudulent. It is important to determine the distribution of fraudulent transactions because these transactions are rare, so this is important information to keep in mind when evaluating a model's performance.
+
+### Class Distribution: Non-Fraud vs. Fraud
+
+![Class Distribution Non-Fraud vs. Fraud](image.png)
+
+_Figure 1: Class Distribution Non-Fraud vs. Fraud_
+
+Since there is an obvious class imbalance between fraudulent and non-fraudulent transactions, it is important to use metrics other than just accuracy to evaluate a model. Metrics like precision, recall, and F1 score will do a better job of indicating the performance of a model on the minority class. Understanding that there is a class imbalance for fraudulent and non-fraudulent transactions can also help pick a model that better handles a class imbalance.
+
+---
+
+After understanding the distribution of `class`, it is important to compare `class` to other variables to determine if a relationship exists between the two.
+
+### Purchase Value by Class
+
+![Purchase Value By Class](image2.png)
+
+_Figure 2: Purchase Value By Class_
+
+The "Class vs. Purchase Value" figure shows that there is no significant difference in purchase value between fraudulent and non-fraudulent transactions. Therefore, purchase value will not be a good predictor of fraudulent purchases, and other features should be explored.
+
+---
+
+### Fraudulent Transaction Percentage by Source
+
+![Fraudulent Transaction Percentage by Source](image3.png)
+
+_Figure 3: Fraudulent Transaction Percentage by Source_
+
+The "Source vs. Fraud Percentage" bar graph displays the percentage of transactions generated from each source that were fraudulent. Direct transactions had a higher fraud percentage than transactions generated from ads or SEO (search engine optimization). While direct transactions had a higher percentage of fraudulent transactions, it was only around 1.5% higher than the other sources, so its importance in modeling will need to be further explored.
+
+---
+
+### Fraudulent Transaction Percentage by Browser
+
+![Fraudulent Transaction Percentage by Browser](image4.png)
+
+_Figure 4: Fraudulent Transaction Percentage by Browser_
+
+The "Browser vs. Fraud Percentage" bar graph shows the percentage of transactions by browser that were fraudulent. Chrome and Firefox had a higher percentage of fraudulent transactions than the other browsers, but the difference in percentage between each browser is small. That being said, it is unlikely that the browser used will be a good indicator of fraudulent transactions.
+
+---
+
+### Fraudulent Transaction Percentage by Sex
+
+![Fraudulent Transaction Percentage by Sex](image5.png)
+
+_Figure 5: Fraudulent Transaction Percentage by Sex_
+
+The "Sex vs. Fraud" bar graph is used to determine if one sex was more likely to complete a fraudulent transaction than the other. The graph shows the percentage of the transactions that were fraudulent for both sexes represented in the data. Fraudulent transactions by males were 0.45% higher than females. While there is a difference in the percentage of fraudulent transactions between the sexes, the difference is not enough to make sex a good indicator of fraudulent transactions.
+
+---
+
+### Time Difference Between Signup and Initial Purchase for Non-Fraudulent and Fraudulent Transactions
+
+![Violin Plot of Time Difference Distributions for Non-Fraudulent and Fraudulent Transactions](image6.png)
+
+_Figure 6: Violin Plot of Time Difference Distributions for Non-Fraudulent and Fraudulent Transactions_
+
+The violin plot of the time difference distributions for non-fraudulent and fraudulent transactions is used to identify patterns in how quickly an initial purchase is made after sign-up. Based on the plot, non-fraudulent transactions have a uniform spread, so there are no discernible patterns in time difference for non-fraudulent transactions. Fraudulent transactions, however, are more concentrated around zero, meaning fraudulent transactions have significantly lower time difference values than non-fraudulent transactions. The difference in distribution of time differences between fraudulent and non-fraudulent transactions looks to be significant and could be a good indicator for fraudulent transactions.
+
+---
+
+### Fraudulent and Non-Fraudulent Transactions Based on Device User Type
+
+![Grouped Bar Chart of Devices as Single or Multiple Users for Fraudulent and Non-Fraudulent Transactions](image7.png)
+
+_Figure 7: Grouped Bar Chart of Devices as Single or Multiple Users for Fraudulent and Non-Fraudulent Transactions_
+
+The grouped bar chart displaying devices as single or multiple users for fraudulent and non-fraudulent transactions can be used to identify patterns in fraudulent transactions for devices with a single user or multiple users. For fraudulent transactions, devices with multiple users accounted for nearly 60% of the fraudulent transactions. For non-fraudulent transactions, less than 5% of transactions occurred on a device with multiple users. This shows that the majority of non-fraudulent transactions occur on a device with a single user, while a large percentage of fraudulent transactions occurred on a device that used multiple user IDs. Therefore, a `device_id` with multiple `user_id`'s could be a good indicator of fraudulent transactions.
+
+---
+
+### Numerical Data Correlation Heatmap
+
+![Correlation Heatmap](image8.png)
+
+_Figure 8: Correlation Heatmap_
+
+The heatmap shows the correlation between numerical features in the data. All features are almost completely uncorrelated, with the exception of `time_difference` and `class`, which are weakly correlated. For the sake of creating a model, weak to no correlation is preferred. Strongly correlated features can reduce a model's accuracy and lead to redundancy within the model, causing overfitting.
+
+---
+
+## Insights and Observations From Exploratory Data Analysis
+
+Several key insights were gained from the exploratory data analysis portion of the project. Visualization of the class distribution revealed a class imbalance, so it is important to include metrics such as precision, recall, and the F1 score to evaluate model performance. Other visualizations found that the `purchase_value`, `source`, and `browser` are not good indicators of class, but including these features in the model could lead to higher predictive power. No particular browsers or sources were attributed to a higher percentage of fraudulent transactions, and differences in purchase value were not good indicators of fraudulent purchases. 
+
+`Sex` was also a poor indicator of fraudulent transactions, as the percentage of fraudulent transactions is nearly the same for males and females. `Time_difference` was the first feature found to be a possible indicator of fraudulent transactions. Fraudulent transactions were found to have a shorter time difference between initial sign-up and purchase, so `time_difference` could be a valuable feature for a fraud detection model. 
+
+The type of device user was also found to be a possible indicator of fraudulent transactions. Devices with multiple users accounted for a higher percentage of fraudulent transactions compared to non-fraudulent transactions. This suggests that multiple users could be an indicator of fraudulent activity. Lastly, a heatmap was utilized to determine the correlations between numerical features. The correlation of features was found to be relatively weak, suggesting that these variables will not cause redundancy or overfitting of the model.
+
+Based on the EDA, the features `time_difference` and `user_id` are likely the best to include in a model that predicts fraudulent transactions. Both features appear to be indicators of fraudulent transactions, and therefore these features will be useful in creating a model that predicts fraudulent transactions.

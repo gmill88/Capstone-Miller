@@ -273,3 +273,90 @@ The type of device user was also found to be a possible indicator of fraudulent 
 
 Based on the EDA, the features `time_difference` and `user_id` are likely the best to include in a model that predicts fraudulent transactions. Both features appear to be indicators of fraudulent transactions, and therefore these features will be useful in creating a model that predicts fraudulent transactions.
 
+# Select Model, Train and Evaluate Model
+
+The modeling portion of the project utilizes predictive analysis machine learning models to identify fraudulent transactions based on the features `unique_users_per_device` and `time_difference`. Model performance decreased across the board when features other than these were added. The Jupyter notebook with all coding utilized can be accessed [here](https://github.com/gmill88/Capstone-Miller/blob/main/Modeling.ipynb).
+
+## Select Models
+
+Models were selected based on their ability to handle imbalanced data and potentially identify fraudulent transactions based on the features found to be good indicators of fraud. The models evaluated include:
+
+- **Logistic Regression:** Chosen because these models are used for binary classification models like fraudulent and non-fraudulent transactions.
+- **Gradient Boosting Classifier:** A flexible model that is robust to imbalanced data with high predictive power with non-linear data.
+- **Decision Tree:** Captures complex patterns in the data, and can model non-linear patterns of fraudulent transactions.
+- **Random Forest:** Combines multiple decision trees to reduce overfitting, a problem with decision tree models.
+- **SMOTE:** Synthetic Minority Oversampling Technique was used to compare model performance with and without it because of the unbalanced fraud data. SMOTE reduces bias to the majority class and attempts to help the model perform better.
+
+## Train Models
+
+This project is implemented in VS Code integrated with Jupyter Notebooks. The implementation of the analysis began with data collection and data cleaning. After cleaning the data, feature engineering was used to create new features that were expected to increase the performance of the model. Exploratory data analysis was then used to confirm that these features were the best suited to predict fraud. The data was split 80% to train the model and 20% to test the performance of the models.
+
+The performance of the models was evaluated with metrics including:
+
+- **Accuracy:** Measures the overall correctness of a model, though it can be misleading for imbalanced data.
+- **Precision:** The percentage of predicted fraudulent transactions that are actually fraudulent. High precision ensures fewer false positives.
+- **Recall:** The percentage of fraudulent transactions that are correctly identified as fraudulent, making it the most important metric for fraud detection models.
+- **F1 Score:** The harmonic mean of the recall and precision scores, balancing a model's performance in both metrics.
+- **AUC (Area Under the ROC Curve):** Evaluates the trade-off between true positives and false positives, providing a robust measure of performance regardless of classification threshold.
+
+Class weight was set to `'balanced'` for all models that would allow it. A balanced class weight treats the minority group equally as important as the majority group, helping models perform better on imbalanced datasets.
+
+## Evaluate and Compare Models
+
+### Model Performance Results
+
+![Model Performance Results](image9.png)
+
+The figure includes all training and test metrics for each model that was evaluated. Since the e-commerce fraud data is unbalanced, SMOTE was used with compatible models to determine if SMOTE helped better predict the minority class (fraud). SMOTE oversamples the minority class in an attempt to increase recall and F1 score.
+
+Based on the figure, most of the models had good accuracy numbers when working with the test data. However, the Decision Tree Classifier with SMOTE and Random Forest Classifier with SMOTE may have overfit the data in the training portion, as accuracy dropped from 100% on training data to 75% on testing data. The models underperforming in accuracy were taken out of consideration for model selection.
+
+While accuracy is important, it should not be the only metric to evaluate models with. The dataset is imbalanced (nearly 90% non-fraud to 10% fraud), so if the model were to predict the majority class (non-fraud) every time, the model would be expected to be 90% accurate. Area under the ROC curve is another metric used to evaluate the models. AUC can be used to determine the model's ability to distinguish between the classes fraud and non-fraud. The Logistic Regression, Gradient Boosting Classifier, and Logistic Regression with SMOTE performed the best and had AUC scores of 0.85, 0.84, and 0.84 respectively. These models will be further evaluated to determine which is best for fraud detection.
+
+### Model Recall Comparison
+
+![Model Recall Comparison](image10.png)
+
+Figure 13 contains a line plot that shows the difference between train and test recall for each of the models evaluated. Recall is possibly the most important metric for identifying fraud, as it represents the model's ability to correctly identify transactions that were actually fraudulent.
+
+- **Logistic Regression and Gradient Boosting Classifier:** Had the highest recall on the test data without overfitting. These models performed equally well on training and test data, showcasing their ability to generalize.
+- **Logistic Regression w/SMOTE:** Had lower recall scores in comparison to other models in both training and testing, but it maintained similar scores for both. This indicates that while the model didn't perform the best, it did not overfit the data.
+- **Decision Tree Classifier, Decision Tree w/SMOTE, Random Forest Classifier, and Random Forest Classifier w/SMOTE:** All overfit the data. The models had perfect recall during training (1.0), but test recall dropped significantly for each model. These models seem to memorize training data well but are unable to generalize to new data.
+
+In conclusion, the Logistic Regression and Gradient Boosting Classifier models are best for identifying fraud in terms of their recall scores. Overfitting models like the Decision Tree Classifier and Random Forest Classifier, even using SMOTE, should be avoided.
+
+### Model Precision Comparison
+
+![Model Precision Comparison](image11.png)
+
+Figure 14 illustrates a line plot comparing the train and test precision scores for each model. Precision measures the proportion of predicted fraudulent transactions that are actually fraudulent. High precision reduces false positives, ensuring legitimate transactions are not flagged incorrectly.
+
+- **Logistic Regression w/SMOTE:** Achieved the highest precision on both training and testing datasets among all the models. This indicates its ability to effectively identify fraudulent transactions with minimal false positives.
+- **Logistic Regression and Gradient Boosting Classifier:** Performed well in terms of balanced train and test precision but had lower precision than Logistic Regression w/SMOTE.
+- **Decision Tree Classifier, Decision Tree w/SMOTE, Random Forest Classifier, and Random Forest Classifier w/SMOTE:** Showed overfitting, with perfect precision on the training data but large drops in test precision. This overfitting decreases their reliability.
+- **Decision Tree w/SMOTE and Random Forest Classifier w/SMOTE:** Performed poorly on test precision, suggesting that SMOTE could be leading to overfitting.
+
+In conclusion, Logistic Regression w/SMOTE emerges as the top-performing model in terms of precision. Logistic Regression and Gradient Boosting Classifier should also be considered depending on their performance in other metrics.
+
+### Model F1 Score Comparison
+
+![Model F1 Score Comparison](image12.png)
+
+Figure 15 illustrates a line plot comparing the train and test F1 scores for each model. The F1 score balances precision and recall, ensuring both accurate identification of fraudulent transactions and minimal false negatives.
+
+- **Logistic Regression w/SMOTE:** Achieved consistent and balanced F1 scores for both training (0.67) and testing (0.68) datasets, making it the best-performing model overall.
+- **Logistic Regression and Gradient Boosting Classifier:** Both models demonstrated stable train and test F1 scores and are reliable options.
+- **Decision Tree Classifier, Decision Tree w/SMOTE, Random Forest Classifier, and Random Forest Classifier w/SMOTE:** Exhibited overfitting, with significant performance drops on test data.
+- **Random Forest Classifier w/SMOTE and Decision Tree w/SMOTE:** Performed poorly on test F1 scores, suggesting overfitting caused by SMOTE.
+
+In conclusion, Logistic Regression w/SMOTE is the top-performing model for fraud detection based on F1 score. Logistic Regression and Gradient Boosting Classifier are also strong candidates, particularly for scenarios where model generalization is a priority.
+
+## Model Evaluation and Comparison Conclusion
+
+Based on the evaluation of all models across key metrics—accuracy, recall, precision, AUC, and F1 score—Logistic Regression w/SMOTE emerges as the top-performing model, providing balanced and consistent results across training and testing datasets. Its ability to maintain high precision, recall, and F1 scores makes it an excellent choice for fraud detection, especially in minimizing false positives and negatives.
+
+The Logistic Regression and Gradient Boosting Classifier models also demonstrated strong performance, generalizing well to unseen data with minimal overfitting. These models are reliable alternatives, particularly when SMOTE is not feasible or when model simplicity and interpretability are priorities.
+
+On the other hand, models such as the Decision Tree Classifier and Random Forest Classifier, with or without SMOTE, struggled with significant overfitting and poor generalization. While these models excelled in training, their poor test performance highlights their unsuitability for fraud detection tasks.
+
+Ultimately, Logistic Regression w/SMOTE is recommended as the primary model for e-commerce fraud detection, with Logistic Regression and Gradient Boosting Classifier as strong secondary options. However, model performance on simulated e-commerce transactions, with a highest F1 score of 0.68, highlights the limitations of using simulated data. The lack of complex, real-world patterns of fraudulent and non-fraudulent transactions likely contributed to suboptimal results. To ensure the models are suitable for real-world application, further evaluation with real-world data is necessary. This would provide a more accurate assessment of the models’ ability to identify fraudulent e-commerce transactions effectively.

@@ -305,7 +305,7 @@ Class weight was set to `'balanced'` for all models that would allow it. A balan
 
 ### Model Performance Results
 
-![Model Performance Results](image9.png)
+![Model Performance Results](Images/image9.png)
 
 The figure includes all training and test metrics for each model that was evaluated. Since the e-commerce fraud data is unbalanced, SMOTE was used with compatible models to determine if SMOTE helped better predict the minority class (fraud). SMOTE oversamples the minority class in an attempt to increase recall and F1 score.
 
@@ -315,7 +315,7 @@ While accuracy is important, it should not be the only metric to evaluate models
 
 ### Model Recall Comparison
 
-![Model Recall Comparison](image10.png)
+![Model Recall Comparison](Images/image10.png)
 
 Figure 13 contains a line plot that shows the difference between train and test recall for each of the models evaluated. Recall is possibly the most important metric for identifying fraud, as it represents the model's ability to correctly identify transactions that were actually fraudulent.
 
@@ -327,7 +327,7 @@ In conclusion, the Logistic Regression and Gradient Boosting Classifier models a
 
 ### Model Precision Comparison
 
-![Model Precision Comparison](image11.png)
+![Model Precision Comparison](Images/image11.png)
 
 Figure 14 illustrates a line plot comparing the train and test precision scores for each model. Precision measures the proportion of predicted fraudulent transactions that are actually fraudulent. High precision reduces false positives, ensuring legitimate transactions are not flagged incorrectly.
 
@@ -340,7 +340,7 @@ In conclusion, Logistic Regression w/SMOTE emerges as the top-performing model i
 
 ### Model F1 Score Comparison
 
-![Model F1 Score Comparison](image12.png)
+![Model F1 Score Comparison](Images/image12.png)
 
 Figure 15 illustrates a line plot comparing the train and test F1 scores for each model. The F1 score balances precision and recall, ensuring both accurate identification of fraudulent transactions and minimal false negatives.
 

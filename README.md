@@ -141,6 +141,7 @@ fraudulent, is the dependent variable.
 | Age              | Age of the user                                | int64     | 39                   |
 | IP Address       | IP address used during transaction             | float64   | 732758368.79972      |
 | Time Difference  | Time Between Sign-up and Purchase (Minutes)    | float64   | 75391.4              |
+| Unique Users Per Device  | Number of Unique user_id's per device|  int 64     | 1                    |
 | Class            | Fraud label (0 or 1)                           | int64     | 0                    |
 ## Exploratory Data Analysis
 Exploratory Data Analysis is an important part of a data analytics project [3].

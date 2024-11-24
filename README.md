@@ -159,7 +159,7 @@ matplotlib, and scikit-learn were imported. Commands like head(), .shape, and
 info() were used to inspect the cleaned data. These commands provide a quick
 look at the first few rows of data, the number of rows and columns in the dataset,
 the number of non-null rows, and the datatype of each row in the data. These
-commands revealed that there are 10 columns and 151,112 rows in the cleaned
+commands revealed that there are 11 columns and 151,112 rows in the cleaned
 data, and all rows contain non-null data (no missing values). After inspection,
 describe(include=’all’) was used to generate summary statistics for numerical
 columns and frequency statistics for the categorical columns. A bar graph was

@@ -70,14 +70,12 @@ with the highest precision and accuracy.
 3. Evaluate multiple models to determine which model best predicts fraudulent
 E-Commerce transactions.
 ## Limitations
-– **Use of Simulated Data:** Simulated data is used to protect the privacy of
-customers. Simulated data can lack complexity and may show bias, so it
-would not be as affective as real data.
-– **Generalization or Overfitting:** The simulated data is generalized to one type
-of fraudulent transaction, card-not-present fraud, and would likely struggle
-to identify other types of fraud. The simulated data could also be based on
-previous fraud patterns, so as new fraud patterns emerge, the model would
-be less effective in detecting fraud.
+
+- **Use of Simulated Data:**  
+  Simulated data was used in this project to protect customer privacy. However, simulated data may lack the complexity of real-world data and could introduce biases. This limitation may impact the model's ability to perform as effectively as it would with real-world data.
+
+- **Generalization and Overfitting:**  
+  The model was trained and tested on data that represents a single type of fraudulent transaction: card-not-present fraud. While effective for this type of fraud, the model may struggle to identify other types of fraud. Additionally, if the simulated data reflects past fraud patterns, the model may be less effective at detecting emerging or novel fraud patterns.
 ## Data Collection
 ### Data Source and Description
 The E-Commerce Fraud data set, found here https://www.kaggle.com/datasets/vbinh002/fraud-ecommerce/data, 

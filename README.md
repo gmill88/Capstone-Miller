@@ -369,3 +369,19 @@ Ultimately, Logistic Regression w/SMOTE is recommended as the primary model for 
 Limitations of the project included the use of simulated card data. The simulated data did not contain the complexity of real-world transactions, likely causing models to struggle generalizing to new data and leading several models to severely overfit the training data. The simulated data also oversimplified feature relationships to the point that there was almost no correlation between most features. The absence of feature relationships hurt the performance of the model.
 ### Future Investigations
 Future investigations should be focused on fraud data that captures more complex transactions and feature relationships. A dataset containing anonymous fraud transaction data, or a simulated dataset that does a better job of capturing the complexity of real-world transactions could help train a model on a wider variety of fraudulent transactions. A model trained on a wider variety of transactions would likely be more robust, and could lead to better overall model performance. This data would also likely contain stronger feature relationships, that would be useful to a model for identifying fraudulent transactions.
+## References
+1. Arkoselabs: What is e-commerce fraud? (2024), https://www.arkoselabs.com/
+explained/what-is-ecommerce-fraud/, accessed: 2024-10-23
+2. Central, D.S.: https://www.datasciencecentral.com/in-fraud-detection-for-e-
+commerce-how-does-anomaly-detection-fit-in-and-what-are-the-key-approaches/
+(2024), https://www.datasciencecentral.com, accessed: 2024-10-23
+3. Coursera: https://www.coursera.org/articles/exploratory-data-analysis (2024),
+https://www.coursera.org, accessed: 2024-11-12
+E-Commerce Fraud Detection 27
+4. Go-Globe: E-commerce and online shopping statistics (2024), https://www.
+go-globe.com/e-commerce-and-online-shopping-stats/, accessed: 2024-10-23
+5. HITRUST: Protecting against e-commerce fraud (2024), https://www.hitrust.com/
+blog protect.html, accessed: 2024-10-23
+6. Research, J.: Merchant fraud prevention research report (2024), https:
+//www.juniperresearch.com/research/fintech-payments/fraud-identity/
+merchant-fraud-prevention-research-report/, accessed: 2024-10-23

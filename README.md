@@ -20,6 +20,10 @@ python3 -m pip install pandas scikit-learn seaborn matplotlib
  ```bash
  python3 -m pip freeze > requirements.txt
   ```
+
+## Abstract 
+This project aims to develop a machine learning model for detecting e-commerce fraud using simulated transaction data from a Kaggle Fraud E-Commerce Dataset. The primary objective of the project is to assess the effectiveness of various classification models to identify fraudulent transactions based on the engineered features time difference and unique users per device, which are potential indicators of fraud. Multiple models, including Logistic Regression, Decision Trees, Gradient Boosting, and Random Forest, were trained and evaluated, with special attention given to handling class imbalance using the Synthetic Minority Oversampling Technique (SMOTE). Based on the results, the Logistic Regression model with SMOTE outperformed others in terms of overall classification performance, achieving the highest F1 score. However, Logistic Regression without SMOTE and the Gradient Boosting Classifier models showed higher recall scores. This suggests better detection of fraudulent transactions by these models, but worse overall performance due to the prevalence of false positives. The project highlights the challenges of using simulated data that lacks the complexity of real-world transactions, underscoring the importance of using high-quality, representative data in fraud detection systems. Future work could focus on obtaining more complex and representative datasets to improve model performance and generalization.
+
 ## Project Introduction
 E-Commerce has experienced great growth over the last several years as a result
 of accessibility and convenience, especially during pandemic lockdowns [4]. How-

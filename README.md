@@ -356,6 +356,8 @@ In conclusion, Logistic Regression w/SMOTE is the top-performing model for fraud
 
 ## Model Evaluation and Comparison Conclusion
 
+![Model F1 Score Comparison](Images/image13.png)
+
 Based on the evaluation of all models across key metrics—accuracy, recall, precision, AUC, and F1 score—Logistic Regression w/SMOTE emerges as the top-performing model, providing balanced and consistent results across training and testing datasets. Its ability to maintain high precision, recall, and F1 scores makes it an excellent choice for fraud detection, especially in minimizing false positives and negatives.
 
 The Logistic Regression and Gradient Boosting Classifier models also demonstrated strong performance, generalizing well to unseen data with minimal overfitting. These models are reliable alternatives, particularly when SMOTE is not feasible or when model simplicity and interpretability are priorities.
